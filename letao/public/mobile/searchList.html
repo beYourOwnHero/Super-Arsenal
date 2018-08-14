@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
+  <title>传智电商-商品列表</title>
+  <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+  <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/searchList.css">
+</head>
+
+<body>
+  <!--主体容器-->
+  <div class="lt_container">
+    <!--头部-->
+    <header class="lt_header">
+      <a href="javascript:history.back();" class="left">
+        <span class="fa fa-chevron-left"></span>
+      </a>
+      <h3>商品列表</h3>
+    </header>
+    <!--内容-->
+    <div class="lt_content">
+      <div class="lt_wrapper">
+        <div class="mui-scroll-wrapper">
+          <div class="mui-scroll">
+            <!--搜索框-->
+            <div class="lt_search">
+              <input type="search" placeholder="根据商品关键字进行搜索">
+              <a href="javascript:;">搜索</a>
+            </div>
+            <!-- 排序 -->
+            <div class="lt_order">
+              <a data-type="time" href="javascript:;">上架时间
+                <span class="fa fa-angle-down"></span>
+              </a>
+              <a data-type="price" href="javascript:;">价格
+                <span class="fa fa-angle-down"></span>
+              </a>
+              <a data-type="num" href="javascript:;">销量
+                <span class="fa fa-angle-down"></span>
+              </a>
+              <a data-type="sale" href="javascript:;">折扣
+                <span class="fa fa-angle-down"></span>
+              </a>
+            </div>
+            <!-- 产品列表 -->
+            <div class="lt_product">
+              <!-- TODO render -->
+              <!-- 模板引擎渲染部分 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--底部-->
+    <footer class="lt_footer">
+      <a href="/mobile/index.html">
+        <span class="fa fa-home"></span>
+        <p>首页</p>
+      </a>
+      <a href="/mobile/category.html">
+        <span class="fa fa-bars"></span>
+        <p>分类</p>
+      </a>
+      <a href="/mobile/user/cart.html">
+        <span class="fa fa-shopping-cart"></span>
+        <p>购物车</p>
+      </a>
+      <a href="/mobile/user/index.html">
+        <span class="fa fa-user"></span>
+        <p>个人中心</p>
+      </a>
+    </footer>
+  </div>
+
+  <script type="text/template" id="product">
+  <ul class="mui-clearfix">
+    {{each data item i}}
+    <li>
+        <a href="/mobile/product.html?productId={{item.id}}" class="lt_proBox">
+          <%
+          var def = '/mobile/images/none01.jpg';
+          if(item.pic&&item.pic.length&&item.pic[0].picAddr){
+              def = item.pic[0].picAddr;
+          }
+          %>
+            <img onerror="this.src='/mobile/images/none01.jpg'" src="{{def}}" alt="">
+            <p class="name mui-ellipsis-2">{{item.proName}}</p>
+            <p class="price">
+                <span class="now">&yen;{{item.price}}</span>
+                <span class="old">&yen;{{item.oldPrice}}</span>
+            </p>
+            <button>立即购买</button>
+        </a>
+    </li>
+    {{/each}}
+  </ul>
+</script>
+
+  <script src="assets/mui/js/mui.min.js"></script>
+  <script src="assets/zepto/zepto.min.js"></script>
+  <script src="assets/artTemplate/template-web.js"></script>
+  <script src="js/mobile.js"></script>
+  <script src="js/searchList.js"></script>
+</body>
+
+</html>

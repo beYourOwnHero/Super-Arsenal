@@ -1,0 +1,17 @@
+.lt_order {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background: #f3f4f5;
+  font-size: 12px;
+}
+
+.lt_order a { 
+  color: #666;
+  text-align: center;
+  float: left;
+  width: 25%;
+}
+.lt_order a.now {
+  color: red;
+}

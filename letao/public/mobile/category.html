@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>传智电商-分类</title>
+  <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+    <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/category.css">
+</head>
+
+<body>
+  <!-- 主体容器 -->
+  <div class="lt_container">
+
+    <!-- 头部 -->
+    <header class="lt_header">
+      <a href="javascript:history.back();" class="left"><span class="fa fa-chevron-left"></span></a>
+      <h3>商品分类</h3>
+      <a href="/mobile/search.html" class="right"><span class="fa fa-search"></span></a>
+    </header>
+
+    <!-- 内容 -->
+    <div class="lt_content">
+      <div class="lt_wrapper">
+        <!-- 左侧顶级分类 -->
+        <aside class="lt_cateLeft">
+            <!-- TODO render -->
+            <!-- 表示以上部分需要模板引擎渲染 -->
+          </aside>
+          <!-- 右侧品牌分类 -->
+          <article class="lt_cateRight">
+            <!-- TODO render -->
+            <!-- 表示以上部分需要模板引擎渲染 -->
+          </article>
+      </div>  
+    </div>
+
+    <!--底部-->
+    <footer class="lt_footer">
+      <a href="/mobile/index.html" class="now">
+        <span class="fa fa-home"></span>
+        <p>首页</p>
+      </a>
+      <a href="/mobile/category.html">
+        <span class="fa fa-bars"></span>
+        <p>分类</p>
+      </a>
+      <a href="/mobile/user/cart.html">
+        <span class="fa fa-shopping-cart"></span>
+        <p>购物车</p>
+      </a>
+      <a href="/mobile/user/index.html">
+        <span class="fa fa-user"></span>
+        <p>个人中心</p>
+      </a>
+    </footer>
+  </div>
+
+  <!-- type="text/template" 表示一种开发习惯，
+       type后面的东西不是这个也是可以渲染的，
+       但是以这种方式编译器会有提示 -->
+
+       <script type="text/template" id="top">
+        <ul>
+            {{each rows}}
+            <li class="{{$index==0?'now':''}}"><a data-id="{{$value.id}}" href="javascript:;">{{$value.categoryName}}</a></li>
+            {{/each}}
+        </ul>
+    </script>
+    <script type="text/template" id="second">
+        <ul>
+            {{if rows.length}}
+                {{each rows}}
+                <li><a href="#"><img onerror="this.src='/mobile/images/none01.jpg'" src="{{$value.brandLogo||'/mobile/images/none01.jpg'}}" alt=""><p>{{$value.brandName}}</p></a></li>
+                {{/each}}
+            {{else}}
+                <li class="nd">没有品牌数据。</li>
+            {{/if}}
+        </ul>
+    </script>
+
+  <script src="assets/mui/js/mui.min.js"></script>
+  <script src="assets/zepto/zepto.min.js"></script>
+  <script src="assets/artTemplate/template-web.js"></script>
+  <script src="js/mobile.js"></script>
+  <script src="js/category.js"></script>
+</body>
+</html>

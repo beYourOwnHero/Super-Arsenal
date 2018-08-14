@@ -1,0 +1,99 @@
+[class^="pro_"]{
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.pro_name p{
+  margin-bottom: 0;
+  font-size: 20px;
+  color: #333;
+}
+.pro_price .now{
+  font-size: 20px;
+  color: red;
+}
+.pro_price .old{
+  font-size: 12px;
+  color: #666;
+  text-decoration: line-through;
+}
+.pro_size{
+  line-height: 32px;
+}
+.pro_size span{
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 12px;
+}
+.pro_size span.now{
+  background: #fa0;
+}
+.pro_num{}
+.pro_num .change{
+  width: 92px;
+  height: 32px;
+  border: 1px solid #ccc;
+  line-height: 30px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+}
+.pro_num .change span{
+  width: 30px;
+  height: 30px;
+  float: left;
+}
+.pro_num .change input{
+  float: left;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  margin-bottom: 0;
+  padding: 0;
+  text-align: center;
+  border-radius: 0;
+}
+.pro_num .sy{
+  font-size: 12px;
+}
+/*操作栏*/
+.lt_option{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 55px;
+  width: 100%;
+  background: #f3f4f5;
+  line-height: 55px;
+  border-top: 1px solid #ccc;
+}
+.lt_option > a{
+  width: 55px;
+  height: 54px;
+  text-align: center;
+  color: #333;
+  float: left;
+}
+.lt_option .btn_box{
+  overflow: hidden;
+  padding-right: 10px;
+}
+.lt_option .btn_box > a{
+  width: 49%;
+  height: 44px;
+  text-align: center;
+  line-height: 44px;
+  color: #fff;
+  font-size: 16px;
+  float: left;
+  margin-top: 5px;
+  border-radius: 2px;
+}
+.lt_option .btn_box .addCart{
+  background: #991020;
+  margin-right: 2%;
+}
+.lt_option .btn_box .pay{
+  background: #fa672d;
+}
